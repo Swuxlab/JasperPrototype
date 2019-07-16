@@ -112,8 +112,8 @@ Installing dependencies
 3) Install Phonetisaurus, m2m-aligner and MITLM
 	-> wget http://distfiles.macports.org/openfst/openfst-1.3.4.tar.gz
 	-> wget https://github.com/mitlm/mitlm/releases/download/v0.4.1/mitlm_0.4.1.tar.gz
--> wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/m2m-aligner/m2m-aligner-1.2.tar.gz
--> wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/phonetisaurus/is2013-conversion.tgz
+	-> wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/m2m-aligner/m2m-aligner-1.2.tar.gz
+	-> wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/phonetisaurus/is2013-conversion.tgz
    Untar the downloads
 	-> tar -xvf m2m-aligner-1.2.tar.gz
 	-> tar -xvf openfst-1.3.4.tar.gz
@@ -166,6 +166,7 @@ Troubleshooting installation problems:
 Possible errors you may encounter and its fixes:
 Error: "Cannot convert ostream to bool". Fixed by changing the line bool ret = *strm; to bool ret = static_cast<bool>(*strm);
 There may be another error saying gcc will not recognise "W1" and "--no-as-needed". To fix, go to the openfsts folder and use grep -r -- -W1 and grep -r --no-as-needed to find where they are. There is a typo for W1 as it should be the letter l. Change it in each file. As for the "--no-as-needed", find it and delete it but keep the code around it.
+
 When compiling the phonetisaurus, you may get the library not found error. Fix for this is -> sudo /sbin/ldconfig -v then compile again.
 When using different mics, be sure to check mic.py if you get invalid sample rate errors. You would need to change the RATE and CHUNK variable to something suitable for the mics sound card. Now it is at RATE: 48000 and CHUNK: 2048
 
@@ -173,6 +174,7 @@ Installing modules for Jasper:
 The modules are downloaded from the Official Jasper website.
 http://jasperproject.github.io/documentation/modules/
 These modules have installation guides inside each one. However they are slightly outdated therefore there may be errors when trying to install them.
+
 Troubleshooting module installation problems:
 Evernote should be connected to the swux eamil for note storage. If given EDAM errorcode=8, go to Evernote.py, change 
 client = EvernoteClient(token=auth_token, sandbox = false) to client = EvernoteClient(token=auth_token)
@@ -214,7 +216,7 @@ access token: 47WABYDCE3U2IXOSDLUIHPJMGDKS4FTH
  
 LEDs
 Sources used:
-http://wiki.seeedstudio.com/ReSpeaker_4_Mic_Array_for_Raspberry_Pi/
+http://wiki.seeedstudio.com/ReSpeaker_4_Mic_Array_for_RIspberry_Pi/
 
 Direction of arrival installation and use:
 I combined and rewrote the vad_doa.py and pixels.py files to create a functioning DOA.
@@ -222,31 +224,31 @@ For the DOA, working prototype is in DOA.py (home/pi/mic_array)
 For DOA to work, you would need to have the whole mic_array folder for imports
 
 Installation:
-install dependancies
-git clone https://github.com/respeaker/4mics_hat.git
-git clone https://github.com/respeaker/mic_array.git
-cd mic_array
-nano vad_doa.py 
-#change CHANNELS = 8 to CHANNELS = 4 @line10 -> You need to change the mic to 4 due to only having 4 mics
-git clone https://github.com/respeaker/pixel_ring.git
-cd pixel_ring
-pip install -U -e .
-Copy from 4mic_hat folder, alexa_led_pattern.py and google_home_led_pattern.py to the folder mic_array as the test2 will need it for imports
+Install dependancies:
+-> git clone https://github.com/respeaker/4mics_hat.git
+-> git clone https://github.com/respeaker/mic_array.git
+-> cd mic_array
+-> nano vad_doa.py 
+-> #change CHANNELS = 8 to CHANNELS = 4 @line10 -> You need to change the mic to 4 due to only having 4 mics
+-> git clone https://github.com/respeaker/pixel_ring.git
+-> cd pixel_ring
+-> pip install -U -e .
+-> Copy from 4mic_hat folder, alexa_led_pattern.py and google_home_led_pattern.py to the folder mic_array as the test2 will need it for imports
 
 LED dependancies:
-# sudo pip install spidev gpiozero
-# sudo apt-get install portaudio19-dev
-# sudo pip install pyaudio
-# sudo pip install webrtcvad
-# sudo apt-get install python-numpy 
-# sudo pip install pyusb
+-> sudo pip install spidev gpiozero
+-> sudo apt-get install portaudio19-dev
+-> sudo pip install pyaudio
+-> sudo pip install webrtcvad
+-> sudo apt-get install python-numpy 
+-> sudo pip install pyusb
  
 Light command and function use:
-For the leds, the functions for basic light functions are in the LightCommands.py (home/pi/pixel/pixel_ring).
-LightCommand needs to import pixel_ring -> would NEED the pixel_ring folder for LightCommand to work
-LightCommand.py is used in:
-jasper.py -> inside def run()
-conversation.py -> inside def handleForever()
+-> For the leds, the functions for basic light functions are in the LightCommands.py (home/pi/pixel/pixel_ring).
+-> LightCommand needs to import pixel_ring -> would NEED the pixel_ring folder for LightCommand to work
+-> LightCommand.py is used in:
+-> jasper.py -> inside def run()
+-> conversation.py -> inside def handleForever()
 
 Things left to do:
 Add the lighting effects to the modules (before, during and after the module has been called). Mostly done, lighting effects would need to be added before it is called and also after it is called.
