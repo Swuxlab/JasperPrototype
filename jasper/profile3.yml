@@ -1,0 +1,13 @@
+carrier: ''
+first_name: Kenneth
+gmail_address: swuxlab123@gmail.com
+gmail_password: Swuxlab246!
+last_name: Alegria
+phone_number: ''
+prefers_email: true
+stt_engine: google
+keys:
+    GOOGLE_SPEECH: '7f6a75b42ab6b7ba9833fe7449cd55659bfa825f'
+tts_engine: espeak-tts
+wmo_id: 107390
+EVERNOTE_TOKEN: S=s1:U=9543a:E1716905b6b2:C16a11548950:P=1cd:A=en-devtoken:V=2:H=687818b9cc16d7a86d303aa54e33e35b
