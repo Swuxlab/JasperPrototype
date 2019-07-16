@@ -234,12 +234,12 @@ pip install -U -e .
 Copy from 4mic_hat folder, alexa_led_pattern.py and google_home_led_pattern.py to the folder mic_array as the test2 will need it for imports
 
 LED dependancies:
-sudo pip install spidev gpiozero
-sudo apt-get install portaudio19-dev
-sudo pip install pyaudio
-sudo pip install webrtcvad
-sudo apt-get install python-numpy 
-sudo pip install pyusb
+# sudo pip install spidev gpiozero
+# sudo apt-get install portaudio19-dev
+# sudo pip install pyaudio
+# sudo pip install webrtcvad
+# sudo apt-get install python-numpy 
+# sudo pip install pyusb
  
 Light command and function use:
 For the leds, the functions for basic light functions are in the LightCommands.py (home/pi/pixel/pixel_ring).
