@@ -48,6 +48,7 @@ JASPER:  I successfully wrote down your note.
 Installation guide
 Pre installation:
 1) Update Pi and install some useful tools
+#
 	-> sudo apt-get update
 	-> sudo apt-get upgrade --yes
 	-> sudo apt-get install nano git-core python-dev bison libasound2-dev libportaudio-dev python-pyaudio --yes
