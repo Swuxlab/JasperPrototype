@@ -50,7 +50,7 @@ Pre installation:
 1) Update Pi and install some useful tools
 	-> sudo apt-get update
 	-> sudo apt-get upgrade --yes
--> sudo apt-get install nano git-core python-dev bison libasound2-dev libportaudio-dev python-pyaudio --yes
+	-> sudo apt-get install nano git-core python-dev bison libasound2-dev libportaudio-dev python-pyaudio --yes
 	-> sudo apt-get remove python-pip
 	-> sudo easy_install pip
 
@@ -88,13 +88,13 @@ Installing dependencies
 
 1) Install pocketshpinx from source
 *When downloading pocketsphinx skip the experimental installation guide, it doesnt work and breaks everything. (Only if you are using the installation steps from the website)
--> wget http://downloads.sourceforge.net/project/cmusphinx/sphinxbase/0.8/sphinxbase-0.8.tar.gz
+	-> wget http://downloads.sourceforge.net/project/cmusphinx/sphinxbase/0.8/sphinxbase-0.8.tar.gz
 	-> tar -zxvf sphinxbase-0.8.tar.gz
 	-> cd ~/sphinxbase-0.8/
 	-> ./configure --enable-fixed
 	-> make
 	-> sudo make install
--> wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz
+	-> wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz
 	-> tar -zxvf pocketpshinx-0.8.tar.gz
 	-> cd ~/pocketsphinx-0.8/
 	-> ./configure
